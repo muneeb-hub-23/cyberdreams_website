@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test - Cyber Dreams</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: #0a0a0a;
+            color: white;
+            font-family: Arial, sans-serif;
+            padding: 50px 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 48px;
+            color: #ff6b00;
+            margin-bottom: 30px;
+        }
+        
+        .services {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin: 50px 0;
+        }
+        
+        .service-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 30px 20px;
+        }
+        
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #ff6b00 0%, #ff8c00 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+        
+        .service-icon i {
+            font-size: 32px;
+            color: white;
+        }
+        
+        .tech-icons {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            margin-top: 50px;
+        }
+        
+        .tech-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .tech-icon i {
+            font-size: 28px;
+            color: #ff6b00;
+        }
+        
+        @media (max-width: 768px) {
+            .services {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="assets/images/logo.png" alt="Logo" style="height: 150px; margin-bottom: 30px;">
+        
+        <h1>CYBER DREAMS</h1>
+        <p style="font-size: 24px; margin-bottom: 20px;">CODE • CREATE • CONQUER</p>
+        <p style="color: #b0b0b0; margin-bottom: 40px;">Transforming Ideas Into Cutting-Edge Software Solutions</p>
+        
+        <div class="services">
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <h3>Software Development</h3>
+                <p style="color: #b0b0b0; font-size: 14px;">Custom Solutions</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-network-wired"></i>
+                </div>
+                <h3>Networking</h3>
+                <p style="color: #b0b0b0; font-size: 14px;">Infrastructure Design</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-video"></i>
+                </div>
+                <h3>CCTV Systems</h3>
+                <p style="color: #b0b0b0; font-size: 14px;">Advanced Surveillance</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-server"></i>
+                </div>
+                <h3>IT Services</h3>
+                <p style="color: #b0b0b0; font-size: 14px;">Complete Support</p>
+            </div>
+        </div>
+        
+        <h2 style="color: #ff6b00; margin-top: 50px;">Technologies We Master</h2>
+        
+        <div class="tech-icons">
+            <div class="tech-icon"><i class="fab fa-react"></i></div>
+            <div class="tech-icon"><i class="fab fa-node-js"></i></div>
+            <div class="tech-icon"><i class="fab fa-python"></i></div>
+            <div class="tech-icon"><i class="fab fa-js"></i></div>
+            <div class="tech-icon"><i class="fab fa-docker"></i></div>
+            <div class="tech-icon"><i class="fab fa-aws"></i></div>
+            <div class="tech-icon"><i class="fab fa-angular"></i></div>
+            <div class="tech-icon"><i class="fab fa-vuejs"></i></div>
+        </div>
+    </div>
+</body>
+</html>

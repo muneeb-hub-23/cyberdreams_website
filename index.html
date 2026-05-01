@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cyber Dreams - Premium Software Development, Networking Solutions, CCTV Systems & IT Services">
+    <meta name="keywords" content="software development, networking, CCTV, IT services, cyber dreams">
+    <meta name="author" content="Cyber Dreams">
+    <meta name="theme-color" content="#ff6b00">
+    
+    <title>Cyber Dreams | CODE • CREATE • CONQUER</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    
+    <div id="preloader">
+        <div class="preloader-content">
+            <div class="cyber-loader">
+                <div class="loader-ring"></div>
+                <div class="loader-ring"></div>
+                <div class="loader-ring"></div>
+                <div class="loader-text">CYBER DREAMS</div>
+            </div>
+            <div class="loading-text">INITIALIZING SYSTEM...</div>
+        </div>
+    </div>
+
+    <div id="particles-js"></div>
+
+    <audio id="bgMusic" loop>
+        <source src="assets/audio/bg_music.mp3" type="audio/mpeg">
+    </audio>
+
+    <div id="musicControl" class="music-control">
+        <button id="musicToggle" class="music-btn">
+            <i class="fas fa-volume-up"></i>
+        </button>
+        <div class="volume-control">
+            <input type="range" id="volumeSlider" min="0" max="100" value="50">
+        </div>
+    </div>
+
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="assets/images/logo.png" alt="Cyber Dreams Logo">
+                <span class="logo-text">CYBER DREAMS</span>
+            </div>
+            
+            <div class="nav-menu" id="navMenu">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#why-us" class="nav-link">Why Us</a>
+                <a href="#portfolio" class="nav-link">Portfolio</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero-section">
+        <div class="hero-overlay"></div>
+        
+        <div class="hero-bg-logo">
+            <img src="assets/images/logo.png" alt="Cyber Dreams Background">
+        </div>
+        
+        <div class="hero-content">
+            <div class="hero-logo">
+                <img src="assets/images/logo.png" alt="Cyber Dreams">
+            </div>
+            
+            <h1 class="hero-title">
+                CYBER DREAMS
+            </h1>
+            
+            <div class="hero-tagline">
+                <span class="tagline-item">CODE</span>
+                <span class="tagline-separator">•</span>
+                <span class="tagline-item">CREATE</span>
+                <span class="tagline-separator">•</span>
+                <span class="tagline-item">CONQUER</span>
+            </div>
+            
+            <p class="hero-subtitle">
+                Transforming Ideas Into Cutting-Edge Software Solutions
+            </p>
+            
+            <div class="hero-buttons">
+                <a href="#services" class="btn btn-primary">
+                    <span>Explore Services</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="#contact" class="btn btn-secondary">
+                    <span>Get Started</span>
+                    <i class="fas fa-rocket"></i>
+                </a>
+            </div>
+            
+            <div class="hero-services">
+                <div class="hero-service-item">
+                    <div class="hero-service-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Software Development</h3>
+                    <p>Custom Solutions</p>
+                </div>
+                
+                <div class="hero-service-item">
+                    <div class="hero-service-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3>Networking</h3>
+                    <p>Infrastructure Design</p>
+                </div>
+                
+                <div class="hero-service-item">
+                    <div class="hero-service-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3>CCTV Systems</h3>
+                    <p>Advanced Surveillance</p>
+                </div>
+                
+                <div class="hero-service-item">
+                    <div class="hero-service-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3>IT Services</h3>
+                    <p>Complete Support</p>
+                </div>
+            </div>
+            
+            <div class="hero-tech-stack">
+                <p class="tech-stack-label">Technologies We Master</p>
+                <div class="tech-icons">
+                    <div class="tech-icon" title="React"><i class="fab fa-react"></i></div>
+                    <div class="tech-icon" title="Node.js"><i class="fab fa-node-js"></i></div>
+                    <div class="tech-icon" title="Python"><i class="fab fa-python"></i></div>
+                    <div class="tech-icon" title="JavaScript"><i class="fab fa-js"></i></div>
+                    <div class="tech-icon" title="Docker"><i class="fab fa-docker"></i></div>
+                    <div class="tech-icon" title="AWS"><i class="fab fa-aws"></i></div>
+                    <div class="tech-icon" title="Angular"><i class="fab fa-angular"></i></div>
+                    <div class="tech-icon" title="Vue.js"><i class="fab fa-vuejs"></i></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <p>Scroll Down</p>
+        </div>
+    </section>
+
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">WHO WE ARE</span>
+                <h2 class="section-title">About <span class="text-gradient">Cyber Dreams</span></h2>
+                <div class="title-underline"></div>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-image">
+                    <div class="image-wrapper">
+                        <img src="assets/images/office.png" alt="Cyber Dreams Office">
+                        <div class="image-overlay"></div>
+                    </div>
+                </div>
+                
+                <div class="about-text">
+                    <h3 class="about-subtitle">Leading Tech Company Delivering Enterprise & Consumer Solutions</h3>
+                    <p class="about-description">
+                        <strong>Cyber Dreams</strong> is a premier technology company specializing in building robust, scalable solutions 
+                        for both <strong>enterprise</strong> and <strong>consumer markets</strong>. We transform complex business challenges 
+                        into elegant software solutions that drive growth and innovation.
+                    </p>
+                    <p class="about-description">
+                        Our comprehensive portfolio includes <strong>enterprise-grade software development</strong> for Fortune 500 companies, 
+                        <strong>consumer applications</strong> serving millions of users, <strong>enterprise networking infrastructure</strong> 
+                        for secure and reliable connectivity, and <strong>advanced CCTV surveillance systems</strong> protecting businesses 
+                        and communities worldwide.
+                    </p>
+                    <p class="about-description">
+                        From startups to multinational corporations, we deliver tailored solutions in <strong>software development</strong>, 
+                        <strong>network architecture</strong>, <strong>security systems</strong>, and <strong>IT infrastructure</strong> 
+                        that meet the highest standards of quality, security, and performance.
+                    </p>
+                    
+                    <div class="about-features">
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>10+ Years of Excellence</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>500+ Projects Delivered</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>24/7 Expert Support</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>100% Client Satisfaction</span>
+                        </div>
+                    </div>
+                    
+                    <a href="#contact" class="btn btn-primary">
+                        <span>Partner With Us</span>
+                        <i class="fas fa-handshake"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">WHAT WE DO</span>
+                <h2 class="section-title">Our <span class="text-gradient">Services</span></h2>
+                <div class="title-underline"></div>
+                <p class="section-description">Comprehensive technology solutions tailored to your business needs</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card main-service" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="service-icon">
+                        <i class="fas fa-code"></i>
+                        <div class="icon-bg"></div>
+                    </div>
+                    <h3 class="service-title">Software Development</h3>
+                    <span class="service-badge">CORE SERVICE</span>
+                    <p class="service-description">
+                        Custom software solutions built with cutting-edge technologies. From web applications to mobile apps, 
+                        enterprise systems to SaaS platforms—we transform your vision into powerful, scalable software.
+                    </p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-chevron-right"></i> Custom Web Applications</li>
+                        <li><i class="fas fa-chevron-right"></i> Mobile App Development</li>
+                        <li><i class="fas fa-chevron-right"></i> Enterprise Software Solutions</li>
+                        <li><i class="fas fa-chevron-right"></i> API Development & Integration</li>
+                    </ul>
+                    <a href="#contact" class="service-link">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="service-card" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="service-icon">
+                        <i class="fas fa-network-wired"></i>
+                        <div class="icon-bg"></div>
+                    </div>
+                    <h3 class="service-title">Networking Solutions</h3>
+                    <p class="service-description">
+                        Design, implement, and manage robust network infrastructures that ensure seamless connectivity, 
+                        security, and optimal performance for your business operations.
+                    </p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-chevron-right"></i> Network Design & Setup</li>
+                        <li><i class="fas fa-chevron-right"></i> Network Security</li>
+                        <li><i class="fas fa-chevron-right"></i> Cloud Networking</li>
+                        <li><i class="fas fa-chevron-right"></i> Network Monitoring</li>
+                    </ul>
+                    <a href="#contact" class="service-link">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="service-card" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="service-icon">
+                        <i class="fas fa-video"></i>
+                        <div class="icon-bg"></div>
+                    </div>
+                    <h3 class="service-title">CCTV & Surveillance</h3>
+                    <p class="service-description">
+                        Advanced surveillance systems with AI-powered analytics, remote monitoring, and intelligent 
+                        security features to protect your assets 24/7.
+                    </p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-chevron-right"></i> IP Camera Installation</li>
+                        <li><i class="fas fa-chevron-right"></i> Remote Monitoring</li>
+                        <li><i class="fas fa-chevron-right"></i> AI-Powered Analytics</li>
+                        <li><i class="fas fa-chevron-right"></i> Cloud Storage Solutions</li>
+                    </ul>
+                    <a href="#contact" class="service-link">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                
+                <div class="service-card" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="service-icon">
+                        <i class="fas fa-server"></i>
+                        <div class="icon-bg"></div>
+                    </div>
+                    <h3 class="service-title">IT Services</h3>
+                    <p class="service-description">
+                        Comprehensive IT support and managed services to keep your technology infrastructure running 
+                        smoothly, securely, and efficiently.
+                    </p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-chevron-right"></i> IT Consulting</li>
+                        <li><i class="fas fa-chevron-right"></i> System Maintenance</li>
+                        <li><i class="fas fa-chevron-right"></i> Cloud Services</li>
+                        <li><i class="fas fa-chevron-right"></i> Technical Support</li>
+                    </ul>
+                    <a href="#contact" class="service-link">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="why-us" class="why-us-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">OUR ADVANTAGE</span>
+                <h2 class="section-title">Why Choose <span class="text-gradient">Cyber Dreams</span></h2>
+                <div class="title-underline"></div>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-card" data-aos="flip-left" data-aos-delay="100">
+                    <div class="stat-icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <div class="stat-number" data-target="500">0</div>
+                    <div class="stat-label">Projects Completed</div>
+                </div>
+                
+                <div class="stat-card" data-aos="flip-left" data-aos-delay="200">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-number" data-target="350">0</div>
+                    <div class="stat-label">Happy Clients</div>
+                </div>
+                
+                <div class="stat-card" data-aos="flip-left" data-aos-delay="300">
+                    <div class="stat-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <div class="stat-number" data-target="10">0</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                
+                <div class="stat-card" data-aos="flip-left" data-aos-delay="400">
+                    <div class="stat-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <div class="stat-number" data-target="24">0</div>
+                    <div class="stat-label">24/7 Support</div>
+                </div>
+            </div>
+            
+            <div class="why-us-content">
+                <div class="why-us-grid">
+                    <div class="why-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="why-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h3>Innovation First</h3>
+                        <p>We leverage the latest technologies and methodologies to deliver cutting-edge solutions that give you a competitive edge.</p>
+                    </div>
+                    
+                    <div class="why-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="why-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Security Focused</h3>
+                        <p>Your data security is our priority. We implement industry-leading security practices in every solution we deliver.</p>
+                    </div>
+                    
+                    <div class="why-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="why-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3>On-Time Delivery</h3>
+                        <p>We respect deadlines and deliver projects on schedule without compromising on quality or functionality.</p>
+                    </div>
+                    
+                    <div class="why-card" data-aos="fade-up" data-aos-delay="400">
+                        <div class="why-icon">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <h3>Cost Effective</h3>
+                        <p>Premium quality doesn't have to break the bank. We offer competitive pricing with exceptional value.</p>
+                    </div>
+                    
+                    <div class="why-card" data-aos="fade-up" data-aos-delay="500">
+                        <div class="why-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h3>Scalable Solutions</h3>
+                        <p>Our solutions grow with your business, ensuring long-term value and adaptability to changing needs.</p>
+                    </div>
+                    
+                    <div class="why-card" data-aos="fade-up" data-aos-delay="600">
+                        <div class="why-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h3>Dedicated Support</h3>
+                        <p>Our expert team is always available to assist you, ensuring smooth operations and quick issue resolution.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="portfolio-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">OUR WORK</span>
+                <h2 class="section-title">Featured <span class="text-gradient">Projects</span></h2>
+                <div class="title-underline"></div>
+                <p class="section-description">Showcasing our expertise through successful project deliveries</p>
+            </div>
+            
+            <div class="portfolio-grid">
+                <div class="portfolio-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="portfolio-image">
+                        <div class="portfolio-placeholder">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <div class="portfolio-overlay">
+                            <h3>E-Commerce Platform</h3>
+                            <p>Full-stack web application with payment integration</p>
+                            <span class="portfolio-tag">Web Development</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="portfolio-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="portfolio-image">
+                        <div class="portfolio-placeholder">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <div class="portfolio-overlay">
+                            <h3>Mobile Banking App</h3>
+                            <p>Secure iOS & Android banking solution</p>
+                            <span class="portfolio-tag">Mobile Development</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="portfolio-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="portfolio-image">
+                        <div class="portfolio-placeholder">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="portfolio-overlay">
+                            <h3>Business Analytics Dashboard</h3>
+                            <p>Real-time data visualization and reporting</p>
+                            <span class="portfolio-tag">Enterprise Software</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="portfolio-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="portfolio-image">
+                        <div class="portfolio-placeholder">
+                            <i class="fas fa-network-wired"></i>
+                        </div>
+                        <div class="portfolio-overlay">
+                            <h3>Corporate Network Infrastructure</h3>
+                            <p>Enterprise-grade networking solution</p>
+                            <span class="portfolio-tag">Networking</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="portfolio-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="portfolio-image">
+                        <div class="portfolio-placeholder">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <div class="portfolio-overlay">
+                            <h3>Smart Surveillance System</h3>
+                            <p>AI-powered security monitoring solution</p>
+                            <span class="portfolio-tag">CCTV Systems</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="portfolio-card" data-aos="fade-up" data-aos-delay="600">
+                    <div class="portfolio-image">
+                        <div class="portfolio-placeholder">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                        <div class="portfolio-overlay">
+                            <h3>Cloud Migration Project</h3>
+                            <p>Complete infrastructure modernization</p>
+                            <span class="portfolio-tag">IT Services</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-tag">GET IN TOUCH</span>
+                <h2 class="section-title">Contact <span class="text-gradient">Us</span></h2>
+                <div class="title-underline"></div>
+                <p class="section-description">Let's discuss how we can help transform your business</p>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-info" data-aos="fade-right">
+                    <h3>Let's Build Something Amazing Together</h3>
+                    <p>Ready to take your business to the next level? Get in touch with our team of experts today.</p>
+                    
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="method-details">
+                                <h4>Phone / WhatsApp</h4>
+                                <a href="tel:03175648951" class="contact-link">03175648951</a>
+                                <a href="https://wa.me/923175648951" class="whatsapp-btn" target="_blank">
+                                    <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="method-details">
+                                <h4>Email</h4>
+                                <a href="mailto:muneebbaig200@gmail.com" class="contact-link">muneebbaig200@gmail.com</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="method-details">
+                                <h4>Business Hours</h4>
+                                <p>Mon - Fri: 9:00 AM - 6:00 PM</p>
+                                <p>Sat: 10:00 AM - 4:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form-wrapper" data-aos="fade-left">
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" required>
+                            <label for="name">Your Name</label>
+                            <span class="form-border"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" required>
+                            <label for="email">Your Email</label>
+                            <span class="form-border"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="tel" id="phone" name="phone" required>
+                            <label for="phone">Your Phone</label>
+                            <span class="form-border"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <select id="service" name="service" required>
+                                <option value="">Select Service</option>
+                                <option value="software">Software Development</option>
+                                <option value="networking">Networking Solutions</option>
+                                <option value="cctv">CCTV & Surveillance</option>
+                                <option value="it">IT Services</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <label for="service">Service Interested In</label>
+                            <span class="form-border"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                            <label for="message">Your Message</label>
+                            <span class="form-border"></span>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-submit">
+                            <span>Send Message</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                    
+                    <div id="formMessage" class="form-message"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-top">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <img src="assets/images/logo.png" alt="Cyber Dreams">
+                        <span>CYBER DREAMS</span>
+                    </div>
+                    <p class="footer-description">
+                        Transforming ideas into cutting-edge software solutions. 
+                        Your trusted partner in digital innovation.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#services">Software Development</a></li>
+                        <li><a href="#services">Networking Solutions</a></li>
+                        <li><a href="#services">CCTV Systems</a></li>
+                        <li><a href="#services">IT Services</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <ul class="footer-contact">
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:03175648951">03175648951</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:muneebbaig200@gmail.com">muneebbaig200@gmail.com</a>
+                        </li>
+                        <li>
+                            <i class="fab fa-whatsapp"></i>
+                            <a href="https://wa.me/923175648951" target="_blank">WhatsApp Chat</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Cyber Dreams. All Rights Reserved.</p>
+                <p>Crafted with <i class="fas fa-heart"></i> by Cyber Dreams Team</p>
+            </div>
+        </div>
+    </footer>
+
+    <button id="scrollTop" class="scroll-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

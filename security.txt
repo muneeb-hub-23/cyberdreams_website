@@ -1,0 +1,17 @@
+Contact: mailto:muneebbaig200@gmail.com
+Contact: tel:+92-317-5648951
+Preferred-Languages: en
+Canonical: https://www.cyberdreams.com/.well-known/security.txt
+Expires: 2027-12-31T23:59:59.000Z
+
+# Security Contact Information
+# If you discover any security vulnerabilities, please report them to:
+# Email: muneebbaig200@gmail.com
+# Phone: +92-317-5648951
+
+# Company: Cyber Dreams
+# Website: https://www.cyberdreams.com
+# Description: Premium Software Development & IT Services
+
+# We take security seriously and appreciate responsible disclosure.
+# Please allow us reasonable time to address any issues before public disclosure.
