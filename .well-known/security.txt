@@ -1,0 +1,6 @@
+Contact: mailto:salescyberdream@gmail.com
+Contact: mailto:muneebbaig200@gmail.com
+Expires: 2026-12-31T23:59:59Z
+Preferred-Languages: en
+Canonical: https://cyberdreams.pk/.well-known/security.txt
+Policy: https://cyberdreams.pk/security-policy

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Videos – Cyber Dreams</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css?v=4">
+  <link rel="icon" type="image/png" href="media/logo.png">
+  <style>
+    .inner-hero { padding: 130px 0 60px; background: var(--dark-2); position: relative; overflow: hidden; }
+    .inner-hero::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse 70% 60% at 50% 0%, rgba(255,107,0,0.07) 0%, transparent 70%); }
+    .inner-hero-content { position:relative; z-index:1; text-align:center; }
+    .inner-hero h1 { font-size: clamp(2rem,5vw,3rem); font-weight:800; color:var(--white); margin:12px 0 10px; }
+    .inner-hero h1 span { color:var(--orange); }
+    .inner-hero p { color:var(--text-muted); max-width:560px; margin:0 auto; line-height:1.8; }
+    .back-link { display:inline-flex; align-items:center; gap:8px; color:var(--orange); font-size:0.85rem; font-weight:600; margin-bottom:16px; text-decoration:none; }
+    .back-link:hover { opacity:0.8; }
+  </style>
+</head>
+<body>
+  <nav id="navbar" class="scrolled">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo"><img src="media/logo.png" alt="Cyber Dreams Logo"></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" target="_blank">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="index.html#why-us">Why Us</a></li>
+        <li><a href="projects.html">Portfolio</a></li>
+        <li><a href="index.html#reviews">Reviews</a></li>
+        <li><a href="videos.html" class="active">Videos</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+      <a href="index.html#contact" class="btn btn-primary nav-cta">Get a Quote</a>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="about.html" target="_blank">About</a>
+    <a href="services.html">Services</a>
+    <a href="projects.html">Portfolio</a>
+    <a href="videos.html">Videos</a>
+    <a href="index.html#contact">Contact</a>
+    <a href="index.html#contact" class="btn btn-primary">Get a Quote</a>
+  </div>
+
+  <div class="inner-hero">
+    <div class="container inner-hero-content">
+      <a href="index.html#videos" class="back-link"><i class="fas fa-arrow-left"></i> Back to Home</a>
+      <span class="section-tag">Watch Us Work</span>
+      <h1>All <span>Videos</span></h1>
+      <p>All our YouTube Shorts — tap any video to watch it right here.</p>
+    </div>
+  </div>
+
+  <section class="section" style="background:var(--dark)">
+    <div class="container">
+      <div class="videos-grid" id="videos-grid"></div>
+      <div id="empty-msg" style="display:none;text-align:center;padding:60px 20px;color:var(--text-muted)">
+        <i class="fab fa-youtube" style="font-size:3rem;display:block;margin-bottom:14px;color:var(--dark-5)"></i>
+        <p>No videos added yet. Check back soon!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div class="video-lightbox" id="video-lightbox">
+    <div class="video-lightbox-inner">
+      <button class="video-lightbox-close" id="video-lightbox-close"><i class="fas fa-times"></i></button>
+      <iframe id="video-lightbox-iframe" src="" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <footer id="footer">
+    <div class="container">
+      <div class="footer-bottom" style="border-top:1px solid var(--border);padding-top:24px;margin-top:0">
+        <p>&copy; 2026 Cyber Dreams. All Rights Reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="index.html">Home</a>
+          <a href="admin.html">Admin</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button id="back-to-top"><i class="fas fa-arrow-up"></i></button>
+  <a id="wa-float" href="https://wa.me/923175648951" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+  <script src="assets/js/api.js?v=7"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      const navbar = document.getElementById('navbar');
+      window.addEventListener('scroll', () => {
+        navbar.classList.toggle('scrolled', window.scrollY > 50);
+        document.getElementById('back-to-top')?.classList.toggle('show', window.scrollY > 400);
+      });
+      document.getElementById('back-to-top')?.addEventListener('click', () => window.scrollTo({top:0,behavior:'smooth'}));
+      document.getElementById('hamburger')?.addEventListener('click', () => {
+        document.getElementById('hamburger').classList.toggle('open');
+        document.getElementById('mobile-menu').classList.toggle('open');
+      });
+
+      // Lightbox
+      document.getElementById('video-lightbox-close')?.addEventListener('click', closeLightbox);
+      document.getElementById('video-lightbox')?.addEventListener('click', e => { if(e.target.id==='video-lightbox') closeLightbox(); });
+      document.addEventListener('keydown', e => { if(e.key==='Escape') closeLightbox(); });
+
+      const grid = document.getElementById('videos-grid');
+      let videos;
+      try {
+        videos = (await API.getVideos()).slice().sort((a,b) => new Date(b.createdAt||0) - new Date(a.createdAt||0));
+      } catch(err) { console.error('Failed to load videos:', err); return; }
+      if (!videos.length) { document.getElementById('empty-msg').style.display = 'block'; return; }
+
+      grid.innerHTML = videos.map(v => {
+        const ytId  = API.extractYouTubeId(v.url);
+        const thumb = ytId ? `https://img.youtube.com/vi/${ytId}/mqdefault.jpg` : '';
+        return `
+          <div class="video-card fade-up" data-ytid="${ytId||''}" data-title="${v.title||''}">
+            ${thumb ? `<img src="${thumb}" class="video-thumb" alt="${v.title||'Video'}" loading="lazy">` : `<div class="video-thumb-placeholder"><i class="fab fa-youtube"></i></div>`}
+            <div class="video-overlay">
+              <div class="video-title">${v.title||'Watch Video'}</div>
+              ${v.label ? `<div class="video-label">${v.label}</div>` : ''}
+            </div>
+            <div class="video-play-btn"><i class="fas fa-play"></i></div>
+          </div>
+        `;
+      }).join('');
+
+      grid.querySelectorAll('.video-card').forEach(card => {
+        card.addEventListener('click', () => openLightbox(card.dataset.ytid));
+      });
+
+      const io = new IntersectionObserver(entries => entries.forEach((e,i) => { if(e.isIntersecting){setTimeout(()=>e.target.classList.add('visible'),i*80);io.unobserve(e.target);} }), {threshold:0.1});
+      document.querySelectorAll('.fade-up').forEach(el => io.observe(el));
+    });
+
+    function openLightbox(ytId) {
+      if (!ytId) return;
+      document.getElementById('video-lightbox-iframe').src = `https://www.youtube.com/embed/${ytId}?autoplay=1&rel=0&modestbranding=1`;
+      document.getElementById('video-lightbox').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+      document.getElementById('video-lightbox').classList.remove('open');
+      document.getElementById('video-lightbox-iframe').src = '';
+      document.body.style.overflow = '';
+    }
+  </script>
+</body>
+</html>

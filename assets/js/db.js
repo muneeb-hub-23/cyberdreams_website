@@ -5,13 +5,17 @@
 
 const DB = {
   KEYS: {
-    SERVICES: 'cd_services',
-    PROJECTS: 'cd_projects',
-    REVIEWS: 'cd_reviews',
-    TEAM: 'cd_team',
-    SETTINGS: 'cd_settings',
-    MESSAGES: 'cd_messages',
-    STATS: 'cd_stats',
+    SERVICES:          'cd_services',
+    PROJECTS:          'cd_projects',
+    REVIEWS:           'cd_reviews',
+    VIDEOS:            'cd_videos',
+    TEAM:              'cd_team',
+    SETTINGS:          'cd_settings',
+    MESSAGES:          'cd_messages',
+    STATS:             'cd_stats',
+    SHOWCASE_SERVICES: 'cd_showcase_services',
+    SHOWCASE_PROJECTS: 'cd_showcase_projects',
+    SHOWCASE_VIDEOS:   'cd_showcase_videos',
   },
 
   _get(key) {
@@ -99,6 +103,61 @@ const DB = {
     this._set(this.KEYS.REVIEWS, this.getReviews().filter(r => r.id !== id));
   },
 
+  /* ── VIDEOS ───────────────────────────────────────── */
+  getVideos() { return this._get(this.KEYS.VIDEOS); },
+  saveVideo(video) {
+    const list = this.getVideos();
+    if (video.id) {
+      const i = list.findIndex(v => v.id === video.id);
+      if (i !== -1) { list[i] = video; } else { list.push(video); }
+    } else {
+      video.id = this.generateId();
+      video.createdAt = new Date().toISOString();
+      list.push(video);
+    }
+    this._set(this.KEYS.VIDEOS, list);
+    return video;
+  },
+  deleteVideo(id) {
+    this._set(this.KEYS.VIDEOS, this.getVideos().filter(v => v.id !== id));
+  },
+  extractYouTubeId(url) {
+    if (!url) return null;
+    const patterns = [
+      /youtu\.be\/([^?&]+)/,
+      /youtube\.com\/shorts\/([^?&]+)/,
+      /youtube\.com\/watch\?v=([^&]+)/,
+      /youtube\.com\/embed\/([^?&]+)/,
+    ];
+    for (const p of patterns) {
+      const m = url.match(p);
+      if (m) return m[1];
+    }
+    return null;
+  },
+
+  /* ── SHOWCASE ORDER ───────────────────────────────── */
+  // Each showcase is stored as an ordered array of IDs (max 6 for services/projects, 5 for videos)
+  getShowcase(type) {
+    const key = { services: this.KEYS.SHOWCASE_SERVICES, projects: this.KEYS.SHOWCASE_PROJECTS, videos: this.KEYS.SHOWCASE_VIDEOS }[type];
+    return this._get(key);
+  },
+  saveShowcase(type, orderedIds) {
+    const key = { services: this.KEYS.SHOWCASE_SERVICES, projects: this.KEYS.SHOWCASE_PROJECTS, videos: this.KEYS.SHOWCASE_VIDEOS }[type];
+    this._set(key, orderedIds);
+  },
+  getShowcaseItems(type) {
+    const all      = type === 'services' ? this.getServices() : type === 'projects' ? this.getProjects() : this.getVideos();
+    const limit    = type === 'videos' ? 5 : 6;
+    const showcase = this.getShowcase(type);
+    if (!showcase.length) {
+      return all.slice(0, limit);
+    }
+    const map     = Object.fromEntries(all.map(x => [x.id, x]));
+    const ordered = showcase.map(id => map[id]).filter(Boolean);
+    return ordered.slice(0, limit);
+  },
+
   /* ── MESSAGES ─────────────────────────────────────── */
   getMessages() { return this._get(this.KEYS.MESSAGES); },
   saveMessage(msg) {
@@ -132,9 +191,9 @@ const DB = {
   /* ── STATS ────────────────────────────────────────── */
   getStats() {
     return this._getObj(this.KEYS.STATS, {
-      projects: '500+',
-      clients: '200+',
-      years: '10+',
+      projects: '150+',
+      clients: '100+',
+      years: '5+',
       satisfaction: '100%',
     });
   },

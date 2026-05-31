@@ -1,15 +1,10 @@
 User-agent: *
+Disallow: /admin
+Disallow: /admin.html
+Disallow: /api/
+Disallow: /backend/
+Disallow: /node_modules/
+
 Allow: /
 
-Sitemap: https://www.cyberdreams.com/sitemap.xml
-
-User-agent: Googlebot
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-User-agent: Slurp
-Allow: /
-
-Disallow: /assets/audio/
+Sitemap: https://cyberdreams.pk/sitemap.xml
