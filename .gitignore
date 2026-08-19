@@ -1,0 +1,15 @@
+# ── Node ─────────────────────────────────────────
+node_modules/
+npm-debug.log*
+
+# ── Environment / secrets ────────────────────────
+.env
+.env.*
+!.env.example
+
+# ── Uploads / media ──────────────────────────────
+media/uploads/
+
+# ── OS artefacts ─────────────────────────────────
+.DS_Store
+Thumbs.db

@@ -1,0 +1,24 @@
+# ── Node ─────────────────────────────────────────
+node_modules
+npm-debug.log*
+
+# ── Environment / secrets ────────────────────────
+.env
+.env.*
+
+# ── Git ──────────────────────────────────────────
+.git
+.gitattributes
+.gitignore
+
+# ── Docker files (not needed inside image) ───────
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# ── Dev / OS artefacts ───────────────────────────
+.DS_Store
+Thumbs.db
+
+# ── Docs ─────────────────────────────────────────
+README.md

@@ -1,0 +1,61 @@
+# ════════════════════════════════════════════════
+#  Cyber Dreams – Docker Compose
+#
+#  MySQL is an EXTERNAL, already-running server.
+#  Configure the connection below (or in .env).
+#  No database service is defined here.
+# ════════════════════════════════════════════════
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: cyberdreams_app
+    restart: unless-stopped
+
+    ports:
+      - "${PORT:-3000}:3000"
+
+    environment:
+      # ── App ──────────────────────────────────
+      PORT: "${PORT:-3000}"
+      NODE_ENV: "${NODE_ENV:-production}"
+
+      # ── MySQL (external server) ──────────────
+      # Point DB_HOST to:
+      #   • "host.docker.internal"  → MySQL running on the host machine (Windows/Mac)
+      #   • An IP / hostname       → Remote MySQL server
+      DB_HOST:     "${DB_HOST:-host.docker.internal}"
+      DB_PORT:     "${DB_PORT:-3306}"
+      DB_NAME:     "${DB_NAME:-cyber_dreams}"
+      DB_USER:     "${DB_USER:-root}"
+      DB_PASSWORD: "${DB_PASSWORD:-your_db_password_here}"
+
+      # ── Session ──────────────────────────────
+      SESSION_SECRET: "${SESSION_SECRET:-change_this_to_a_random_64_char_string_in_prod}"
+
+      # ── Admin ────────────────────────────────
+      ADMIN_PASSWORD: "${ADMIN_PASSWORD:-cyberdreams2025}"
+
+      # ── Cookie ───────────────────────────────
+      FORCE_SECURE_COOKIE: "${FORCE_SECURE_COOKIE:-false}"
+
+      # ── CORS ─────────────────────────────────
+      ALLOWED_ORIGINS: "${ALLOWED_ORIGINS:-https://cyberdreams.pk,http://localhost:3000}"
+
+    volumes:
+      # Persist uploaded media files outside the container
+      - ./media:/app/media
+
+    # On Linux hosts the container cannot use host.docker.internal by default.
+    # This adds it automatically. Safe to keep on all platforms.
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:3000/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 20s
